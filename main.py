@@ -6,8 +6,7 @@ class App:
     def __init__(self):
         self.__user = User("1", "1")
         self.__gui = GUI()
-        self.__gui.display_login(self.__user.check_login)
-        self.__gui.run()
+        self.__gui.run(self.__user.check_login)
 
 
 app = App()
