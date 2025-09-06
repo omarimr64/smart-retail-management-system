@@ -39,7 +39,7 @@ class GUI:
         label.pack()
 
         # Pages frame
-        self.__container = tk.Frame(self.__root, bg="red")
+        self.__container = tk.Frame(self.__root)
         self.__container.pack(fill="both", expand=True)
 
     # LOGIN PAGE
@@ -65,15 +65,15 @@ class GUI:
             password_entry.delete(0, tk.END)
 
         # Login frame
-        login_frame = tk.Frame(self.__container, bg="blue")
+        login_frame = tk.Frame(self.__container)
         self.__add_page("login", login_frame)
-        self.__show_page("login", 200)
+        self.__show_page("login")
 
-        inner_frame = tk.Frame(login_frame, bg="blue")
+        inner_frame = tk.Frame(login_frame)
         inner_frame.place(relx=0.5, rely=0.5, anchor="center")
 
-        label = tk.Label(inner_frame, text="Login", font=self.__title_font)
-        label.grid(row=0, column=0, pady=15, columnspan=2)
+        label = tk.Label(login_frame, text="Login", font=self.__title_font)
+        label.pack(pady=(0, 50))
 
         username_label = tk.Label(inner_frame, text="Username:")
         username_label.grid(row=1, column=0, pady=5, sticky="w")
@@ -119,12 +119,12 @@ class GUI:
 
     # DASHBOARD PAGE
     def __configure_dashboard(self):
-        dashboard_frame = tk.Frame(self.__container, bg="green")
+        dashboard_frame = tk.Frame(self.__container)
         self.__add_page("dashboard", dashboard_frame)
 
         # Title
         label = tk.Label(dashboard_frame, text="Dashboard", font=self.__title_font)
-        label.pack()
+        label.pack(pady=(0, 50))
 
         # Dashboard navigation
         dashboard_navbar = tk.Frame(dashboard_frame)
