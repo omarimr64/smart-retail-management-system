@@ -2,7 +2,7 @@
   {
     "id": "S001",
     "name": "Notebook",
-    "stock_quantity": 600,
+    "stock_quantity": 245,
     "price": 1.2,
     "discount_rule": {
       "ratio": 0.02,
@@ -24,7 +24,7 @@
   {
     "id": "S003",
     "name": "Pencil",
-    "stock_quantity": 800,
+    "stock_quantity": 765,
     "price": 0.3,
     "discount_rule": {
       "ratio": 0.02,

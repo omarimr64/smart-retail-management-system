@@ -44,10 +44,6 @@ class Product:
         # returning the new products
         return new_products
 
-    @classmethod
-    def calc_last_price(cls, price, discount_rule):
-        pass
-
 
 class Grocery(Product):
     discount_rule = {"ratio": 0.05, "for_quantity": 250, "max": 0.25}

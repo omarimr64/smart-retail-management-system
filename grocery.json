@@ -13,7 +13,7 @@
   {
     "id": "G002",
     "name": "Bread",
-    "stock_quantity": 300,
+    "stock_quantity": 209,
     "price": 2.0,
     "discount_rule": {
       "ratio": 0.05,
@@ -24,7 +24,7 @@
   {
     "id": "G003",
     "name": "Eggs (dozen)",
-    "stock_quantity": 200,
+    "stock_quantity": 166,
     "price": 3.5,
     "discount_rule": {
       "ratio": 0.05,
@@ -35,63 +35,8 @@
   {
     "id": "G004",
     "name": "Milk (1L)",
-    "stock_quantity": 150,
+    "stock_quantity": 97,
     "price": 2.8,
-    "discount_rule": {
-      "ratio": 0.05,
-      "for_quantity": 250,
-      "max": 0.25
-    }
-  },
-  {
-    "id": "G005",
-    "name": "Rice (1kg)",
-    "stock_quantity": 400,
-    "price": 4.0,
-    "discount_rule": {
-      "ratio": 0.05,
-      "for_quantity": 250,
-      "max": 0.25
-    }
-  },
-  {
-    "id": "G005",
-    "name": "Rice (1kg)",
-    "stock_quantity": 400,
-    "price": 4.0,
-    "discount_rule": {
-      "ratio": 0.05,
-      "for_quantity": 250,
-      "max": 0.25
-    }
-  },
-  {
-    "id": "G005",
-    "name": "Rice (1kg)",
-    "stock_quantity": 400,
-    "price": 4.0,
-    "discount_rule": {
-      "ratio": 0.05,
-      "for_quantity": 250,
-      "max": 0.25
-    }
-  },
-  {
-    "id": "G005",
-    "name": "Rice (1kg)",
-    "stock_quantity": 400,
-    "price": 4.0,
-    "discount_rule": {
-      "ratio": 0.05,
-      "for_quantity": 250,
-      "max": 0.25
-    }
-  },
-  {
-    "id": "G005",
-    "name": "Rice (1kg)",
-    "stock_quantity": 400,
-    "price": 4.0,
     "discount_rule": {
       "ratio": 0.05,
       "for_quantity": 250,

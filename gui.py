@@ -227,9 +227,7 @@ class GUI:
         cart_products_frame = tk.Frame(cart_frame, width=500, height=350)
         cart_products_frame.pack(side="left", padx=(0, 20))
 
-        cart_bill_frame = tk.Frame(
-            cart_frame, width=300, height=350, border=3, relief="solid"
-        )
+        cart_bill_frame = tk.Frame(cart_frame, width=300, height=350)
         cart_bill_frame.pack(side="left")
         cart_bill_frame.pack_propagate(False)
 
@@ -248,7 +246,7 @@ class GUI:
         cart_products_table.heading("quantity", text="Quantity")
         cart_products_table.column("quantity", anchor="center", width=200)
 
-        cart_products_table.heading("last", text="Last Price")
+        cart_products_table.heading("last", text="Final Price (USD)")
         cart_products_table.column("last", anchor="center", width=200)
 
         # Adding cart products
@@ -256,12 +254,59 @@ class GUI:
             cart_products_table.insert(
                 parent="",
                 index=i,
-                values=(
-                    p["product"]["name"],
-                    p["quantity"],
-                ),
+                values=(p["product"]["name"], p["quantity"], Cart.get_final_price(p)),
             )
         cart_products_table.pack()
+
+        # Bill
+        def update_total(e):
+            total_price.config(text=Cart.get_total_price(combo.get()))
+            curr_label.config(text=combo.get())
+
+        def checkout():
+            checkout_products = Cart.get_products()
+            if len(checkout_products) == 0:
+                return messagebox.showerror("ERROR", "Your cart is empty")
+
+            result = messagebox.askyesno("Confirm", "Do you want to confirm purchasing")
+            if result:
+                for p in checkout_products:
+                    p["store"].buy_product(p["product"]["id"], p["quantity"])
+
+                Cart.clear()
+                self.__show_cart_content()
+
+        # Currency
+        currency_frame = tk.Frame(cart_bill_frame)
+        currency_frame.pack(fill="x", pady=(5, 30))
+
+        currency_label = tk.Label(currency_frame, text="Currency:")
+        currency_label.pack(side="left")
+
+        options = Cart.get_currencies()
+
+        combo = ttk.Combobox(currency_frame, values=options, state="readonly")
+        combo.current(0)
+        combo.pack(side="left", padx=(30, 0))
+
+        combo.bind("<<ComboboxSelected>>", update_total)
+
+        # Total
+        total_price_frame = tk.Frame(cart_bill_frame)
+        total_price_frame.pack(fill="x", pady=(0, 30))
+
+        total_price_label = tk.Label(total_price_frame, text="Total price: ")
+        total_price_label.pack(side="left")
+
+        total_price = tk.Label(total_price_frame, text=Cart.get_total_price(options[0]))
+        total_price.pack(side="left", padx=(30, 0))
+
+        curr_label = tk.Label(total_price_frame, text=combo.get())
+        curr_label.pack(side="right")
+
+        # Checkout
+        checkout_btn = tk.Button(cart_bill_frame, text="checkout", command=checkout)
+        checkout_btn.pack(fill="x")
 
     def __show_products_table(self, frame, cls):
         # Products table
@@ -375,7 +420,6 @@ class GUI:
 
     # RUNING THE APP
     def run(self, check_login):
-        # self.__configure_login(check_login)
+        self.__configure_login(check_login)
         self.__configure_dashboard()
-        self.__show_page("dashboard")
         self.__root.mainloop()
