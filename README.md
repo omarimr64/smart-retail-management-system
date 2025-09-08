@@ -7,49 +7,69 @@ The Smart Retail Management System is a Python-based application designed to hel
 - Automatic discounts applied based on purchase quantity
 - Stock management with automatic updates after purchases
 - Option to switch between grocery and stationery stores
-- Delivery and payment options (home delivery or pick-up with different costs)
 - Multi-currency support (USD, EUR, EGP)
 - User-friendly graphical interface built with Tkinter
+<!-- - Delivery and payment options (home delivery or pick-up with different costs) -->
 
 ## Installation
 
 Clone the repository and install the required dependencies:
 
-# Clone this repository
+### Clone this repository
 
 `git clone https://github.com/omarimr64/smart-retail-management-system.git`
 
-# Navigate into the project folder
+### Navigate into the project folder
 
 `cd smart-retail-management-system`
 
-# Create a virtual environment (optional but recommended)
+### Create a virtual environment (optional but recommended)
 
 `python -m venv venv`
-`source venv/bin/activate` # On macOS/Linux
-`venv\Scripts\activate` # On Windows
 
-# Install dependencies from requirements.txt
+`source venv/bin/activate` On macOS/Linux
+
+`venv\Scripts\activate` On Windows
+
+### Install dependencies from requirements.txt
 
 `pip install -r requirements.txt`
 
 ## Project Structure
 
+```bash
 smart-retail-management-system/
-│── main.py # Main entry point (handles business logic)
-│── gui.py # Graphical User Interface (Tkinter)
-│── user.py # User authentication and verification
-│── requirements.txt # Project dependencies
-│── README.md # Project documentation
-│── assets/ # Images, icons, or other resources
+│── main.py
+│── gui.py
+│── user.py
+│── cart.py
+│── products.py
+│── requirements.txt
+│── README.md
+│── assets/
+```
 
 ## Project Images
 
-[Login Screen](/assets/Login.png)
-[Verification Screen](/assets/Verification.png)
-[Grocery Store](/assets/Grocery.png)
-[Stationary Store](/assets/Stationary.png)
-[Cart Screen](/assets/Cart.png)
+<p align="left">
+  <img src="/assets/Login.png" alt="Login Screen" width="500"/>
+</p>
+
+<p align="left">
+  <img src="/assets/Verification.png" alt="Verification Screen" width="500"/>
+</p>
+
+<p align="left">
+  <img src="/assets/Grocery.png" alt="Grocery Store" width="500"/>
+</p>
+
+<p align="left">
+  <img src="/assets/Stationary.png" alt="Stationary Store" width="500"/>
+</p>
+
+<p align="left">
+  <img src="/assets/Cart.png" alt="Cart Screen" width="500"/>
+</p>
 
 ## Usage
 
