@@ -1,0 +1,57 @@
+[
+  {
+    "id": "S001",
+    "name": "Notebook",
+    "stock_quantity": 245,
+    "price": 1.2,
+    "discount_rule": {
+      "ratio": 0.02,
+      "for_quantity": 50,
+      "max": 0.2
+    }
+  },
+  {
+    "id": "S002",
+    "name": "Pen",
+    "stock_quantity": 1000,
+    "price": 0.5,
+    "discount_rule": {
+      "ratio": 0.02,
+      "for_quantity": 50,
+      "max": 0.2
+    }
+  },
+  {
+    "id": "S003",
+    "name": "Pencil",
+    "stock_quantity": 765,
+    "price": 0.3,
+    "discount_rule": {
+      "ratio": 0.02,
+      "for_quantity": 50,
+      "max": 0.2
+    }
+  },
+  {
+    "id": "S004",
+    "name": "Ruler",
+    "stock_quantity": 400,
+    "price": 0.7,
+    "discount_rule": {
+      "ratio": 0.02,
+      "for_quantity": 50,
+      "max": 0.2
+    }
+  },
+  {
+    "id": "S005",
+    "name": "Eraser",
+    "stock_quantity": 300,
+    "price": 0.4,
+    "discount_rule": {
+      "ratio": 0.02,
+      "for_quantity": 50,
+      "max": 0.2
+    }
+  }
+]
